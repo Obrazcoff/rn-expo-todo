@@ -5,13 +5,18 @@ import { AddTodo } from './components/AddTodo'
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <View>
       <Navbar title="Todo App" />
-      <AddTodo />
+      <View style={styles.container}>
+        <AddTodo />
+      </View>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    paddingHorizontal: 30,
+    paddingVertical: 20,
+  },
 })
