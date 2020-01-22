@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { Navbar } from './components/Navbar'
 import { AddTodo } from './components/AddTodo'
+import { Todo } from './components/Todo'
 
 export default function App() {
   const [todos, setTodos] = useState([])
@@ -23,9 +24,9 @@ export default function App() {
         <AddTodo onSubmit={addTodo} />
 
         <View>
-          {todos.map((todo) => {
-            return <Text key={todo.id}>{todo.title}</Text>
-          })}
+          {todos.map((todo) => (
+            <Todo todo={todo} key={todo.id} />
+          ))}
         </View>
       </View>
     </View>
